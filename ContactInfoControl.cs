@@ -554,11 +554,11 @@ namespace EsccWebTeam.HouseStyle
                     Uri formUrl;
                     if (visibleAddress)
                     {
-                        formUrl = UriFormatter.GetWebsiteEmailFormUri(this.emailAddress, this.emailAddress);
+                        formUrl = UriFormatter.GetWebsiteEmailFormUri(this.emailAddress, this.emailAddress, Context.Request.Url);
                     }
                     else
                     {
-                        formUrl = UriFormatter.GetWebsiteEmailFormUri(this.emailAddress, this.emailText);
+                        formUrl = UriFormatter.GetWebsiteEmailFormUri(this.emailAddress, this.emailText, Context.Request.Url);
                     }
                     if (formUrl != null)
                     {

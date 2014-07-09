@@ -57,17 +57,19 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="emailAddress">The email address</param>
         /// <param name="recipientName">The name of the email recipient</param>
-        public static Uri GetWebsiteEmailFormUri(string emailAddress, string recipientName)
+        /// <param name="baseUrl">The base URL.</param>
+        /// <returns></returns>
+        public static Uri GetWebsiteEmailFormUri(string emailAddress, string recipientName, Uri baseUrl)
         {
-            if (emailAddress == null || emailAddress.Length == 0) return null;
+            if (string.IsNullOrEmpty(emailAddress)) return null;
 
-            int atPos = emailAddress.IndexOf("@");
+            int atPos = emailAddress.IndexOf("@", StringComparison.Ordinal);
             if (atPos <= 0) return null;
 
             string emailAccount = emailAddress.Substring(0, atPos);
             string emailDomain = emailAddress.Substring(atPos + 1);
 
-            return UriFormatter.GetWebsiteEmailFormUri(emailAccount, emailDomain, recipientName);
+            return UriFormatter.GetWebsiteEmailFormUri(emailAccount, emailDomain, recipientName, baseUrl);
         }
 
         /// <summary>
@@ -76,20 +78,18 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="emailAccount">The part of the email address before the @</param>
         /// <param name="emailDomain">The part of the email address after the @</param>
         /// <param name="recipientName">The name of the email recipient</param>
-        /// <returns>URL of an ESCC website page, or null</returns>
-        public static Uri GetWebsiteEmailFormUri(string emailAccount, string emailDomain, string recipientName)
+        /// <param name="baseUrl">The base URL.</param>
+        /// <returns>
+        /// URL of an ESCC website page, or null
+        /// </returns>
+        public static Uri GetWebsiteEmailFormUri(string emailAccount, string emailDomain, string recipientName, Uri baseUrl)
         {
-            // if no dots, assume it's an internal dev box and re-use the current host
-            // otherwise use the live site
-            HttpContext ctx = HttpContext.Current;
-            string host = (ctx != null && ctx.Request.Url.Host.IndexOf(".") == -1) ? ctx.Request.Url.Host : "www.eastsussex.gov.uk";
-
             // Build up URL
-            StringBuilder url = new StringBuilder(Uri.UriSchemeHttp)
+            StringBuilder url = new StringBuilder(Uri.UriSchemeHttps)
                 .Append("://")
-                .Append(host)
+                .Append(baseUrl.Host)
                 .Append("/contactus/emailus/email.aspx?n=")
-                .Append(ctx.Server.UrlEncode(recipientName.Replace(" & ", " and ")))
+                .Append(HttpUtility.UrlEncode(recipientName.Replace(" & ", " and ")))
                 .Append("&e=")
                 .Append(emailAccount)
                 .Append("&d=")
