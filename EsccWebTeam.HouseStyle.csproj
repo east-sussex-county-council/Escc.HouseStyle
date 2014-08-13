@@ -130,9 +130,6 @@
     <Compile Include="UriFormatter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DownloadFormats.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
