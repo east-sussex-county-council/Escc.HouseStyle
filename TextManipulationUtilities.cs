@@ -20,58 +20,6 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
         }
 
         /// <summary>
-        /// Wraps legend text by formatting the string with appropriate line breaks
-        /// </summary>
-        /// <param name="text"></param>
-        /// <param name="wrapAt"></param>
-        /// <returns></returns>
-        public static string LegendWrapLines(string text, int wrapAt)
-        {
-            StringBuilder sb = new StringBuilder();
-
-
-
-
-            string[] words;
-            text = text.Replace("<br />", "");
-            words = text.Trim().Split(' ');
-            int iLine;
-            int lineLength;
-
-            for (iLine = 0; iLine < words.Length; )
-            {
-                // split into words so that we don't split lines mid-word
-
-
-                // monitor how long the line we're building has become
-                lineLength = 0;
-                int i = 0;
-
-                do
-                {
-                    // If adding this word would make the line too long, start a new line
-                    if ((lineLength + words[i].Length) >= wrapAt)
-                    {
-                        sb.Append(@"<br />");
-                        lineLength = 0;
-                    }
-
-                    // add the word
-                    sb.Append(words[i] + " ");
-                    lineLength += (words[i].Length + 1);
-                    i++;
-                }
-                while (i < words.Length);
-                break;
-            }
-
-
-            return sb.ToString();
-        }
-
-
-
-        /// <summary>
         /// Wrap text before a maximum number of characters per line
         /// </summary>
         /// <param name="text">Text to be wrapped</param>
