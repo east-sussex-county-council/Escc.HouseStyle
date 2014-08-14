@@ -108,12 +108,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RoundedBox.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="RoundedBoxEdge.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ContactInfoControl.cs">
       <SubType>Code</SubType>
     </Compile>
