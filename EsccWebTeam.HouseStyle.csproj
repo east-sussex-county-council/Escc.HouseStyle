@@ -129,12 +129,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TextAreaMarkup\DisplayMarkup.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="TextAreaMarkup\InsertMarkup.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Case.cs">
       <SubType>Code</SubType>
     </Compile>
