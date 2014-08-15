@@ -3,7 +3,6 @@ Escc.HouseStyle
 
 A collection of functions loosely organised around presenting HTML text in a consistent manner. Includes:
 
-* Displaying numbers and contact information according to our house style
 * Converting dates between ISO8601, RFC 822 and our house style formats
 * Transforming the case of text
 * Wrapping text
