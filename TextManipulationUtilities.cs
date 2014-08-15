@@ -124,6 +124,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
         /// </summary>
         /// <param name="originalPostcode"></param>
         /// <returns></returns>
+        [Obsolete("Use Escc.AddressAndPersonalDetails.PostcodeUtility")]
         public static string AddWhitespaceToPostcode(string originalPostcode)
         {
 
