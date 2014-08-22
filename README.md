@@ -8,6 +8,3 @@ A collection of functions loosely organised around presenting HTML text in a con
 * Wrapping text
 * Highlighting text
 * Embedding links to media
-* Managing .NET resource files for localisation
-
-There are also a number of functions retained for backward compatibility with old applications.

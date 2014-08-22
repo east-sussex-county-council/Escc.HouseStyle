@@ -111,7 +111,6 @@
     <Compile Include="DateTimeFormatter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TextUtilities.cs" />
     <Compile Include="UriFormatter.cs">
       <SubType>Code</SubType>
     </Compile>
