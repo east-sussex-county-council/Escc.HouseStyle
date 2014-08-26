@@ -14,6 +14,16 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
     public class DateTimeFormatter
     {
         /// <summary>
+        /// Gets the current UK time regardless of the current thread culture
+        /// </summary>
+        /// <returns></returns>
+        /// <remarks>Important for applications hosted on Microsoft Azure where the time is in UTC and the culture is en-US.</remarks>
+        public static DateTime UkNow()
+        {
+            return TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time"));
+        }
+
+        /// <summary>
         /// Parses the date, in way which is a little more forgiving than the default .NET implementation.
         /// </summary>
         /// <param name="dateText">The date text.</param>
