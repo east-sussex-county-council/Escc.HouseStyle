@@ -19,7 +19,7 @@ namespace EsccWebTeam.HouseStyle
         {
             text = Regex.Replace(text, "<a href=\"http://www.youtube.com/watch" + @"\?" + "v=(?<VideoId>[A-Za-z0-9_-]+)\"[^>]*>.*?</a>", "<object type=\"application/x-shockwave-flash\" width=\"" + embedWidth.ToString(CultureInfo.InvariantCulture) + "\" height=\"" + embedHeight.ToString(CultureInfo.InvariantCulture) + "\" data=\"http://www.youtube-nocookie.com/v/${VideoId}&amp;hl=en_GB&amp;fs=1&amp;rel=0\" class=\"video\"><param name=\"movie\" value=\"http://www.youtube-nocookie.com/v/$1&amp;hl=en_GB&amp;fs=1&amp;rel=0\" /><param name=\"wmode\" value=\"transparent\" /><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param></object>");
 
-            text = Regex.Replace(text, "<a href=\"http://youtu.be/(?<VideoId>[A-Za-z0-9_-]+)\">.*?</a>", "<iframe width=\"" + embedWidth.ToString(CultureInfo.InvariantCulture) + "\" height=\"" + embedHeight.ToString(CultureInfo.InvariantCulture) + "\" src=\"http://www.youtube.com/embed/${VideoId}\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\" class=\"video\"></iframe>");
+            text = Regex.Replace(text, "<a href=\"http://youtu.be/(?<VideoId>[A-Za-z0-9_-]+)\">.*?</a>", "<iframe width=\"" + embedWidth.ToString(CultureInfo.InvariantCulture) + "\" height=\"" + embedHeight.ToString(CultureInfo.InvariantCulture) + "\" src=\"https://www.youtube.com/embed/${VideoId}\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\" class=\"video\"></iframe>");
 
             return text;
         }
