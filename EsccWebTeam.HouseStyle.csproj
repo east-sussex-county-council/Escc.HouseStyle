@@ -138,12 +138,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Escc.Data.Web\EsccWebTeam.Data.Web.csproj">
-      <Project>{9C56D3DD-4952-4A1B-9AD6-907A1142872F}</Project>
-      <Name>EsccWebTeam.Data.Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="LICENSE.md" />
     <None Include="README.md" />
   </ItemGroup>
