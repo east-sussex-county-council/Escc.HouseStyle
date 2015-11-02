@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace EsccWebTeam.HouseStyle
@@ -31,6 +32,7 @@ namespace EsccWebTeam.HouseStyle
         /// <param name="embedWidth">Width of the embedded video.</param>
         /// <param name="embedHeight">Height of the embedded video.</param>
         /// <returns></returns>
+        [Obsolete("Has no effect since Flickr dropped support for iframe embedding")]
         public static string RecogniseAndEmbedFlickrUrl(string text, int embedWidth, int embedHeight)
         {
             // iframe method no longer allowed by Flickr 6 March 2013

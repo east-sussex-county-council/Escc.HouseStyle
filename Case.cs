@@ -7,6 +7,7 @@ namespace EsccWebTeam.HouseStyle
     /// <summary>
     /// Collection of static methods to manipulate the case of text strings.
     /// </summary>
+    [Obsolete("Use http://humanizr.net/ via NuGet")]
     public static class Case
     {
         /// <summary>

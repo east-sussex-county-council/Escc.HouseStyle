@@ -7,6 +7,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
     /// <summary>
     /// Collection of static methods for manipulating strings
     /// </summary>
+    [Obsolete("Use open source or framework alternatives recommended on each method")]
     public static class TextManipulationUtilities
     {
         /// <summary>
@@ -14,6 +15,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
         /// </summary>
         /// <param name="text">Text to be wrapped</param>
         /// <returns>Wrapped text</returns>
+        [Obsolete("Use an open-source alternative such as https://github.com/tylermercier/TextHelper")]
         public static string WrapLines(string text)
         {
             return TextManipulationUtilities.WrapLines(text, 70);
@@ -25,6 +27,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
         /// <param name="text">Text to be wrapped</param>
         /// <param name="wrapAt">Character position to wrap at</param>
         /// <returns>Wrapped text</returns>
+        [Obsolete("Use an open-source alternative such as https://github.com/tylermercier/TextHelper")]
         public static string WrapLines(string text, int wrapAt)
         {
             StringBuilder sb = new StringBuilder();
@@ -85,6 +88,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
         /// <remarks>
         /// This method was written to decode email addresses, hence the limited character set. It's fine to add extra characters if you need to. RM 25/07/05.
         /// </remarks>
+        [Obsolete("Use System.Web.HttpUtility.HtmlDecode")]
         public static string ConvertEntitiesToCharacters(string text)
         {
             text = text.Replace("&#0046;", ".");
@@ -161,6 +165,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
         /// <param name="term">The term.</param>
         /// <param name="text">The text.</param>
         /// <returns></returns>
+        [Obsolete("Use an open-source alternative such as https://github.com/tylermercier/TextHelper")]
         public static string HighlightTerm(string term, string text)
         {
             // if string supplied, convert to string array
@@ -175,6 +180,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.TextManipulation
         /// <param name="terms">The terms.</param>
         /// <param name="text">The text.</param>
         /// <returns></returns>
+        [Obsolete("Use an open-source alternative such as https://github.com/tylermercier/TextHelper")]
         public static string HighlightTerms(string[] terms, string text)
         {
             string finalText = " " + text; // space added because term not highlighted at start of string
