@@ -9,6 +9,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
     /// <summary>
     /// Static methods to build or reformat URIs
     /// </summary>
+    [Obsolete("Use the alternatives recommended on each method")]
     public static class UriFormatter
     {
         #region Reformat a URI for presentation, not linking
@@ -59,6 +60,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="recipientName">The name of the email recipient</param>
         /// <param name="baseUrl">The base URL.</param>
         /// <returns></returns>
+        [Obsolete("Use EsccWebTeam.EastSussexGovUK.WebsiteFormEmailAddressTransformer")]
         public static Uri GetWebsiteEmailFormUri(string emailAddress, string recipientName, Uri baseUrl)
         {
             if (string.IsNullOrEmpty(emailAddress)) return null;
@@ -82,6 +84,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <returns>
         /// URL of an ESCC website page, or null
         /// </returns>
+        [Obsolete("Use EsccWebTeam.EastSussexGovUK.WebsiteFormEmailAddressTransformer")]
         public static Uri GetWebsiteEmailFormUri(string emailAccount, string emailDomain, string recipientName, Uri baseUrl)
         {
             // Build up URL
@@ -107,6 +110,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="emailAddress">Email address to encode</param>
         /// <returns>Series of XHTML entity references representing the email address</returns>
+        [Obsolete("Use HtmlEncoder in the Escc.Html NuGet package")]
         public static string ConvertEmailToEntities(string emailAddress)
         {
             return UriFormatter.ConvertEmailToEntities(emailAddress, false);
@@ -118,6 +122,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="emailAddress">Email address to encode</param>
         /// <param name="addMailto">if true, adds an encoded mailto: prefix to the email address</param>
         /// <returns>Series of XHTML entity references representing the email address</returns>
+        [Obsolete("Use HtmlEncoder in the Escc.Html NuGet package")]
         public static string ConvertEmailToEntities(string emailAddress, bool addMailto)
         {
             string text = emailAddress.ToLower(CultureInfo.CurrentCulture);
@@ -215,6 +220,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// ConvertToHiddenQuerystring("/councillors/find/councillor", "/councillors/find/councillor.aspx?councillor=")
         /// </code>
         /// </example>
+        [Obsolete("Use ASP.NET's built-in routing")]
         public static void ConvertToHiddenQueryString(string lookFor, string replaceWith)
         {
             HttpContext context = HttpContext.Current;
@@ -244,6 +250,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="lookFor">Pattern to look for in the URL</param>
         /// <param name="replaceWith">Pattern to replace with in the URL</param>
         /// <param name="useRegularExpression">Use regular expression replacement or literal string replacement</param>
+        [Obsolete("Use ASP.NET's built-in routing")]
         public static void RewritePath(string lookFor, string replaceWith, bool useRegularExpression)
         {
             HttpContext context = HttpContext.Current;
