@@ -18,6 +18,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <returns></returns>
         /// <remarks>Important for applications hosted on Microsoft Azure where the time is in UTC and the culture is en-US.</remarks>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static DateTime UkNow()
         {
             return TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time"));
@@ -28,6 +29,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="dateText">The date text.</param>
         /// <returns>Parsed date, or <c>null</c> if not recognised</returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static DateTime? ParseDate(string dateText)
         {
             // Remove ordinals
@@ -58,6 +60,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="month">int month</param>
         /// <returns>January, February, March etc.</returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string MonthName(int month)
         {
             switch (month)
@@ -96,6 +99,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="month">int month</param>
         /// <returns>Jan, Feb, Mar etc.</returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string ShortMonthName(int month)
         {
             switch (month)
@@ -132,6 +136,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <summary>
         /// Get a string in the format 1 January 2004 from a DateTime object. This method should be used only when the preferred style (including the day) is too long.
         /// </summary>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string FullBritishDate(DateTime date)
         {
             return (new StringBuilder(date.Date.Day.ToString(CultureInfo.CurrentCulture)).Append(" ").Append(MonthName(date.Date.Month)).Append(" ").Append(date.Date.Year.ToString()).ToString());
@@ -140,6 +145,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <summary>
         /// Get a string in the format 1 Jan 2004 from a DateTime object. This method should be used only when the preferred full style (including the day) is too long.
         /// </summary>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string ShortBritishDate(DateTime date)
         {
             return (new StringBuilder(date.Date.Day.ToString(CultureInfo.CurrentCulture)).Append(" ").Append(ShortMonthName(date.Date.Month)).Append(" ").Append(date.Date.Year.ToString()).ToString());
@@ -148,6 +154,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <summary>
         /// Get a string in the format 1 Jan 2004 from a DateTime object. Use only for short-term data about the current year, never for anything which will be seen later on, and then only when the preferred full style (including the day) is too long.
         /// </summary>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string ShortBritishDateNoYear(DateTime date)
         {
             return (new StringBuilder(date.Date.Day.ToString(CultureInfo.CurrentCulture)).Append(" ").Append(ShortMonthName(date.Date.Month)).ToString());
@@ -156,6 +163,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <summary>
         /// Get a string in the format Monday 1 January 2004 from a DateTime object
         /// </summary>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string FullBritishDateWithDay(DateTime date)
         {
             return (new StringBuilder(date.Date.DayOfWeek.ToString()).Append(" ").Append(date.Date.Day.ToString()).Append(" ").Append(MonthName(date.Date.Month)).Append(" ").Append(date.Date.Year.ToString()).ToString());
@@ -166,6 +174,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string FullBritishDateWithDayAndTimeString(string date)
         {
             return DateTimeFormatter.FullBritishDateWithDayAndTime(DateTime.Parse(date, CultureInfo.CurrentCulture));
@@ -174,6 +183,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <summary>
         /// Get a string in the format 10am, Monday 1 January 2004 from a DateTime object
         /// </summary>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string FullBritishDateWithDayAndTime(DateTime date)
         {
             return (new StringBuilder(DateTimeFormatter.FullBritishDateWithDay(date)).Append(", ").Append(DateTimeFormatter.Time(date)).ToString());
@@ -182,6 +192,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <summary>
         /// Get a string in the format 10am, 1 Jan 2004 from a DateTime object
         /// </summary>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string ShortBritishDateWithTime(DateTime date)
         {
             return (new StringBuilder(DateTimeFormatter.ShortBritishDate(date)).Append(", ").Append(DateTimeFormatter.Time(date)).ToString());
@@ -190,6 +201,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <summary>
         /// Get a string in the format 1 Jan, 10am. Use only for short-term data about the current year, never for anything which will be seen later on.
         /// </summary>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string ShortBritishDateNoYearWithTime(DateTime date)
         {
             return (new StringBuilder(DateTimeFormatter.ShortBritishDateNoYear(date)).Append(", ").Append(DateTimeFormatter.Time(date)).ToString());
@@ -200,6 +212,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string MonthAndYear(DateTime date)
         {
             return date.ToString("MMMM yyyy", CultureInfo.InvariantCulture);
@@ -210,6 +223,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="time"></param>
         /// <returns></returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string Time(DateTime time)
         {
             StringBuilder sb = new StringBuilder();
@@ -251,6 +265,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// </summary>
         /// <param name="date"></param>
         /// <returns></returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string ISODate(DateTime date)
         {
             return date.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
@@ -262,6 +277,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="date">Date and time to convert</param>
         /// <returns>ISO 8601 UTC date and time string. <example>2006-04-01T15:30:00Z</example></returns>
         /// <remarks>Suitable for hCalendar microformat.</remarks>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string Iso8601DateTime(DateTime date)
         {
             return date.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
@@ -306,6 +322,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         ///             / ( ("+" / "-") 4DIGIT )        ; Local differential
         ///                                             ;  hours+min. (HHMM)
         /// </example>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string Rfc822DateTime(DateTime date)
         {
             // Create a culture object which definitely has the correct day and month names
@@ -322,6 +339,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="date">Date and time to convert</param>
         /// <returns>UNIX timestamp, eg 1115337662 </returns>
         /// <remarks>See <a href="http://www.unixtimestamp.com/">UNIXtimestamp.com</a> for a testing tool</remarks>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static int UnixTimestamp(DateTime date)
         {
             const long ticks1970 = 621355968000000000; // .NET ticks for 1970
@@ -349,6 +367,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="end">DateTime</param>
         /// <param name="includeTime">Boolean default is false</param>
         /// <returns>String</returns>
+        [Obsolete("Use DateTimeFormatter.DateRange()")]
         public static string HouseStyleDates(string start, string end, bool includeTime)//DateTime startDate, DateTime endDate, Boolean includeTime)
         {
 
@@ -452,6 +471,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="startDate">The start date.</param>
         /// <param name="endDate">The end date.</param>
         /// <returns>A text string which includes HTML entities</returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string DateRange(DateTime startDate, DateTime endDate)
         {
             return DateTimeFormatter.DateRange(startDate, endDate, true, true);
@@ -465,6 +485,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <param name="showStartTime">if set to <c>true</c> show start time.</param>
         /// <param name="showEndTime">if set to <c>true</c> show end time.</param>
         /// <returns>A text string which includes HTML entities</returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string DateRange(DateTime startDate, DateTime endDate, bool showStartTime, bool showEndTime)
         {
             return DateRange(startDate, endDate, showStartTime, showEndTime, false);
@@ -481,6 +502,7 @@ namespace eastsussexgovuk.webservices.TextXhtml.HouseStyle
         /// <returns>
         /// A text string which includes HTML entities
         /// </returns>
+        [Obsolete("Use Escc.Dates NuGet package")]
         public static string DateRange(DateTime startDate, DateTime endDate, bool showStartTime, bool showEndTime, bool useShortDateText)
         {
             bool multiDay = (startDate.DayOfYear != endDate.DayOfYear || startDate.Year != endDate.Year);
